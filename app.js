@@ -26,9 +26,9 @@ const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 //const MongoDBStore = require('connect-mongo');
 //const MongoDBStore = new MongoStore(session);
-//const { Session } = require('inspector');
-//const MongoStore = require('connect-mongodb-session');
-const MongoDBStore =  require('connect-mongodb-session')(session);
+const { Session } = require('inspector');
+const MongoDBStore = require('connect-mongo');
+//const MongoDBStore =  require('connect-mongodb-session')(session);
 
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/camp-monk';
 
@@ -61,8 +61,8 @@ app.use(mongoSanitize({
 
 const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
 
-const store = new MongoDBStore({
-    url : dbUrl,
+const store = MongoDBStore.create({
+    mongoUrl : dbUrl,
     secret,
     touchAfter: 24*60*60
 });
