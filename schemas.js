@@ -1,6 +1,7 @@
 const BaseJoi = require('joi');
 const sanitizeHtml = require('sanitize-html');
 
+//Joi to check whether user provided validated formatted data.
 const extension = (joi) => ({
     type: 'string',
     base: joi.string(),

@@ -1,3 +1,5 @@
+//Used hardcoded database for seeding
+//for production mode
 module.exports = [
     {
         city: "New York",

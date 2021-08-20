@@ -2,8 +2,7 @@ if (process.env.NODE_ENV !== "production") {
     require('dotenv').config();
 }
 
-
-
+// CALLING DEPENDECNIES IN PACKAGE.JSON
 const express = require('express');
 const path = require('path');
 const mongoose = require('mongoose');
@@ -19,19 +18,20 @@ const helmet = require('helmet');
 
 const mongoSanitize = require('express-mongo-sanitize');
 
-
-
+// CALLING ROUTES
 const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
-//const MongoDBStore = require('connect-mongo');
-//const MongoDBStore = new MongoStore(session);
+
 const { Session } = require('inspector');
 const MongoDBStore = require('connect-mongo');
-//const MongoDBStore =  require('connect-mongodb-session')(session);
 
-const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/camp-monk';
-
+// linking the database here with the one on Heroku, dbUrl = process.env.DB_URL
+const dbUrl =  'mongodb://localhost:27017/camp-monk' || process.env.DB_URL ;
+// Use the database below when in production
+// "mongodb://localhost/temporary_database"
+// checking DATABASEURL value
+//console.log(process.env.dbUrl);
 
 mongoose.connect(dbUrl , {
     useNewUrlParser: true,
@@ -46,6 +46,7 @@ db.once("open", () => {
     console.log("Database connected");
 });
 
+// Use the included libraries
 const app = express();
 
 app.engine('ejs', ejsMate)
@@ -96,6 +97,7 @@ app.use(session(sessionConfig));
 app.use(flash());
 app.use(helmet());
 
+//Saving all the links of all the scripts and fonts used.
 const scriptSrcUrls = [
     "https://stackpath.bootstrapcdn.com/",
     "https://api.tiles.mapbox.com/",
@@ -141,7 +143,7 @@ app.use(
     })
 );
 
-
+// PASSPORT CONFIGURATION
 app.use(passport.initialize());
 app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
@@ -156,7 +158,7 @@ app.use((req, res, next) => {
     next();
 })
 
-
+// Requiring routes
 app.use('/', userRoutes);
 app.use('/campgrounds', campgroundRoutes)
 app.use('/campgrounds/:id/reviews', reviewRoutes)
@@ -166,7 +168,7 @@ app.get('/', (req, res) => {
     res.render('home')
 });
 
-
+// This is the 'catch all' response for anything that is not found.
 app.all('*', (req, res, next) => {
     next(new ExpressError('Page Not Found', 404))
 })
@@ -177,6 +179,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('error', { err })
 })
 
+// Tell Express to listen for requests (start server)
 const port = process.env.PORT || 3000;
 
 app.listen(port , () => {

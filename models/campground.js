@@ -2,6 +2,7 @@ const mongoose =  require('mongoose');
 const Review  = require('./review')
 const Schema  = mongoose.Schema;
 
+//Image schema setup
 const ImageSchema  = new Schema(
     {
         url: String,
@@ -14,6 +15,7 @@ ImageSchema.virtual('thumbnail').get(function () {
 
 const opts = { toJSON: { virtuals : true}};
 
+//Campgorund schema setup
 const CampgroundSchema = new Schema({
     title:String,
     images:[ImageSchema],
@@ -59,4 +61,5 @@ CampgroundSchema.post('findOneAndDelete', async function(doc) {
     }
 })
 
+//Compiling schema into model
 module.exports = mongoose.model('Campground', CampgroundSchema);

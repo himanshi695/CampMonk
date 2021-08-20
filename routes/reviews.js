@@ -7,9 +7,10 @@ const Campground = require('../models/campground');
 const Review = require('../models/review');
 const reviews = require('../controllers/reviews');
 
-
+// Reviews Create
 router.post('/', isLoggedIn, validateReview, catchAsync(reviews.createReview));
 
+// Reviews Delete
 router.delete('/:reviewId', isLoggedIn, isReviewAuthor, catchAsync(reviews.deleteReview))
 
 module.exports = router;
