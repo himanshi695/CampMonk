@@ -62,11 +62,6 @@ app.use(mongoSanitize({
 
 const secret = process.env.SECRET || 'thisshouldbeabettersecret!';
 
-//const store = new MongoDBStore({
-  // url : 'mongodb://localhost:27017/camp-monk',
-   //secret:secret,
-   //touchAfter: 24*60*60
-//});
 
 const store = MongoDBStore.create({
     mongoUrl : 'mongodb://localhost:27017/camp-monk',
