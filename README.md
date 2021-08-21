@@ -9,25 +9,27 @@ For Live Demo go to https://fierce-shore-20542.herokuapp.com/
 
 1. Authentication
 
-  User login with username and password
+   User login with username and password
+   
 2. Authorization
 
-  One cannot manage posts and view user profile without being authenticated
-  One cannot edit or delete posts and comments created by other users
-  Manage campground posts with basic functionalities:
-  Create, edit and delete posts and comments
-  Upload campground photos
-  Display campground location on Google Maps.
+    One cannot manage posts and view user profile without being authenticated
+    One cannot edit or delete posts and comments created by other users
+  
+3. Manage campground posts with basic functionalities:
+    Create, edit and delete posts and comments
+    Upload campground photos
+    Display campground location on Google Maps.
 
-3. Manage user account with basic functionalities
+4. Manage user account with basic functionalities
 
-4. Flash messages responding to users' interaction with the app
+5. Flash messages responding to users' interaction with the app
 
-5. Responsive web design
+6. Responsive web design
 
-6. Update campground photos when editing campgrounds
+7. Update campground photos when editing campgrounds
 
-7. Update personal information on profile page
+8. Update personal information on profile page
 
 # Getting Started
 This app contains API secrets and passwords that have been hidden deliberately, so the app cannot be run with its features on your local machine. However, feel free to clone this repository if necessary.
