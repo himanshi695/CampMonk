@@ -28,6 +28,12 @@
 <div class="container-fluid">
 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <ul class="navbar-nav ml-auto">
+        <li><a class="navbar-brand" href="/campgrounds">CampMonk</a></li>
+        <li><a class="nav-link" href="/">Home</a></li>
+        <li><a class="nav-link" href="/campgrounds">Campgrounds</a></li>
+        <li><a class="nav-link" href="/campgrounds/new">New Campground</a></li>
+    </ul>
+    <ul class="navbar-nav mr-auto">
         <% if(!currentUser) {%>
             <li class="nav-item active ">
                 <a class="nav-link" href="/login">Login</a>
