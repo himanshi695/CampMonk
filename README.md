@@ -5,44 +5,38 @@ A Node.js web application project. It is a web application designed to add, rate
 Live Demo
 For Live Demo go to https://fierce-shore-20542.herokuapp.com/
 
-Features
-Authentication:
+# Features
 
-User login with username and password
-Authorization
+1. Authentication
 
-One cannot manage posts and view user profile without being authenticated
-One cannot edit or delete posts and comments created by other users
-Manage campground posts with basic functionalities:
+  User login with username and password
+2. Authorization
 
-Create, edit and delete posts and comments
+  One cannot manage posts and view user profile without being authenticated
+  One cannot edit or delete posts and comments created by other users
+  Manage campground posts with basic functionalities:
+  Create, edit and delete posts and comments
+  Upload campground photos
+  Display campground location on Google Maps.
 
-Upload campground photos
+3. Manage user account with basic functionalities
 
-Display campground location on Google Maps (working on it)
+4. Flash messages responding to users' interaction with the app
 
-Search existing campgrounds
+5. Responsive web design
 
-Manage user account with basic functionalities
+6. Update campground photos when editing campgrounds
 
-Flash messages responding to users' interaction with the app
+7. Update personal information on profile page
 
-Responsive web design
-
-Custom Enhancements (under construction)
-
-Update campground photos when editing campgrounds
-
-Update personal information on profile page
-
-Getting Started
+# Getting Started
 This app contains API secrets and passwords that have been hidden deliberately, so the app cannot be run with its features on your local machine. However, feel free to clone this repository if necessary.
-
 Clone or download this repository
-Install dependencies
+
+# Install dependencies
 npm install
 
-Built with-
+# Built with-
 1. Front-end 
 2. ejs Google Maps APIs
 3. Bootstrap
