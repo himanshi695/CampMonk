@@ -43,16 +43,16 @@ Install dependencies
 npm install
 
 Built with-
-Front-end
-ejs Google Maps APIs
-Bootstrap
-Back-end
-express
-mongoDB
-mongoose
-passport
-passport-local
-express-session
-method-override
-Heroku
-Cloud9
+1. Front-end 
+2. ejs Google Maps APIs
+3. Bootstrap
+4. Back-end
+5. express
+6. mongoDB
+7. mongoose
+8. passport
+9. passport-local
+10. express-session
+11. method-override
+12. Heroku
+
